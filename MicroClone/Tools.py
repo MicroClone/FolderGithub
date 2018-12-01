@@ -1,1 +1,1 @@
-
+print("Assalamualaikum warahmatullahi wabarokaatuh")

